@@ -19,12 +19,13 @@ function ProjectDetail() {
 
   return (
     <main className="detail-page">
+      {/* DESKTOP SIDEBAR */}
       <aside className="detail-sidebar">
         <Link className="logo" to="/">
           JEONGWON<span>.</span>
         </Link>
 
-        <Link className="back-link" to="/">
+        <Link className="back-link" to="/#projects">
           ← ALL PROJECTS
         </Link>
 
@@ -36,25 +37,44 @@ function ProjectDetail() {
               to={`/projects/${item.id}`}
             >
               <span>{item.number}</span>
+
               {item.shortTitle}
             </Link>
           ))}
         </nav>
 
         <div className="sidebar-social">
-          <a href="https://github.com/RaeChoe" target="_blank" rel="noreferrer">
+          <a href="https://github.com/RaeChoe" target="_blank" rel="noreferrer" aria-label="GitHub">
             GH
           </a>
 
-          <a href="mailto:your@email.com">@</a>
+          <a href="mailto:picasomati@gmail.com" aria-label="Email">
+            @
+          </a>
         </div>
       </aside>
 
+      {/* TABLET / MOBILE HEADER */}
+      <header className="detail-mobile-header">
+        <div className="detail-mobile-header-inner">
+          <Link className="logo" to="/">
+            JEONGWON<span>.</span>
+          </Link>
+
+          <Link className="detail-mobile-back" to="/#projects">
+            ← PROJECTS
+          </Link>
+        </div>
+      </header>
+
+      {/* DETAIL CONTENT */}
       <section className="detail-main">
         <div className="detail-hero">
           <div className="detail-intro">
             <p className="project-index">
-              <strong>{project.number}</strong> / {String(projects.length).padStart(2, "0")}
+              <strong>{project.number}</strong>
+              {" / "}
+              {String(projects.length).padStart(2, "0")}
             </p>
 
             <h1>{project.title}</h1>
@@ -214,11 +234,13 @@ function ProjectDetail() {
 
             <div>
               <p>PERIOD</p>
+
               <span>{project.period}</span>
             </div>
 
             <div>
               <p>TEAM SIZE</p>
+
               <span>{project.teamSize}</span>
             </div>
 
