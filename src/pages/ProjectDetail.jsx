@@ -23,6 +23,13 @@ function ProjectDetail() {
 
   return (
     <main className="detail-page">
+      <SEO
+        title={project.title}
+        description={project.description}
+        image={project.image}
+        url={`/projects/${project.id}`}
+      />
+
       {/* DESKTOP SIDEBAR */}
       <aside className="detail-sidebar">
         <Link className="logo" to="/">

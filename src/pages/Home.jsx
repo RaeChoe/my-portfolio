@@ -4,6 +4,8 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 import projects from "../data/projects";
 
+import SEO from "../components/SEO";
+
 function Home() {
   const scrollToProjects = () => {
     document.getElementById("projects")?.scrollIntoView({
@@ -13,6 +15,12 @@ function Home() {
 
   return (
     <>
+      <SEO
+        description="프론트엔드 개발자 최정원의 포트폴리오입니다."
+        image="/images/og-default.png"
+        url="/"
+      />
+
       <Header />
 
       <main>
