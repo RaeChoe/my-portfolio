@@ -235,6 +235,27 @@ const projects = [
     github: "https://github.com/RaeChoe/ESTFE13_3rd_Finalproject_personal",
 
     live: "https://estfe-13-3rd-finalproject-personal.vercel.app/",
+
+    screens: [
+      {
+        title: "Recipe Detail",
+        image: "/images/project3-detail.png",
+        description:
+          "레시피 정보와 조리 시간, 난이도, 인분, 조회수 등을 한 화면에서 확인하고 좋아요, 북마크, 공유, 후기 기능까지 사용할 수 있도록 구현했습니다.",
+      },
+      {
+        title: "Community",
+        image: "/images/project3-community.png",
+        description:
+          "게시글 CRUD와 좋아요, 북마크, 댓글 기능을 제공하며 Masonry 레이아웃을 적용해 다양한 크기의 콘텐츠를 자연스럽게 탐색할 수 있도록 구현했습니다.",
+      },
+      {
+        title: "Authentication",
+        image: "/images/project3-login.png",
+        description:
+          "Supabase Auth를 기반으로 이메일 로그인과 Google, Kakao 소셜 로그인을 구현하고 인증 상태에 따라 페이지 접근과 사용자 흐름을 제어했습니다.",
+      },
+    ],
   },
 ];
 

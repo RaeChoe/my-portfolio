@@ -166,10 +166,38 @@ function ProjectDetail() {
               <p className="detail-body result-text">{project.result}</p>
             </section>
 
-            <section className="detail-section project-preview">
-              <p className="detail-label">PROJECT SCREEN</p>
+            <section className="detail-section project-screens">
+              <p className="detail-label">
+                {project.screens?.length > 0 ? "PROJECT SCREENS" : "PROJECT SCREEN"}
+              </p>
 
-              <img src={project.image} alt={`${project.title} 화면`} />
+              {project.screens?.length > 0 ? (
+                <div className="screen-list">
+                  {project.screens.map((screen, index) => (
+                    <article className="screen-item" key={screen.title}>
+                      <div className="screen-heading">
+                        <span>{String(index + 1).padStart(2, "0")}</span>
+
+                        <h3>{screen.title}</h3>
+                      </div>
+
+                      <div className="screen-image">
+                        <img src={screen.image} alt={`${project.title} ${screen.title}`} />
+                      </div>
+
+                      <p>{screen.description}</p>
+                    </article>
+                  ))}
+                </div>
+              ) : (
+                <div className="single-project-screen">
+                  <div className="screen-image">
+                    <img src={project.image} alt={`${project.title} 화면`} />
+                  </div>
+
+                  <p>{project.description}</p>
+                </div>
+              )}
             </section>
           </div>
 
