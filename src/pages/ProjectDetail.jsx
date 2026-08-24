@@ -36,7 +36,6 @@ function ProjectDetail() {
               to={`/projects/${item.id}`}
             >
               <span>{item.number}</span>
-
               {item.shortTitle}
             </Link>
           ))}
@@ -113,7 +112,7 @@ function ProjectDetail() {
               <div className="features-grid">
                 {project.features.map((feature, index) => (
                   <div className="feature-item" key={feature.title}>
-                    <span>0{index + 1}</span>
+                    <span>{String(index + 1).padStart(2, "0")}</span>
 
                     <h3>{feature.title}</h3>
 
@@ -121,6 +120,50 @@ function ProjectDetail() {
                   </div>
                 ))}
               </div>
+            </section>
+
+            <section className="detail-section">
+              <p className="detail-label">TROUBLE SHOOTING</p>
+
+              <div className="trouble-list">
+                {project.troubleshooting?.map((item, index) => (
+                  <article className="trouble-item" key={item.title}>
+                    <div className="trouble-number">{String(index + 1).padStart(2, "0")}</div>
+
+                    <div className="trouble-content">
+                      <h3>{item.title}</h3>
+
+                      <div className="trouble-row">
+                        <span>PROBLEM</span>
+
+                        <p>{item.problem}</p>
+                      </div>
+
+                      <div className="trouble-row">
+                        <span>SOLUTION</span>
+
+                        <p>{item.solution}</p>
+                      </div>
+                    </div>
+                  </article>
+                ))}
+              </div>
+            </section>
+
+            <section className="detail-section">
+              <p className="detail-label">WHAT I LEARNED</p>
+
+              <ul className="learned-list">
+                {project.learned?.map(item => (
+                  <li key={item}>{item}</li>
+                ))}
+              </ul>
+            </section>
+
+            <section className="detail-section">
+              <p className="detail-label">RESULT</p>
+
+              <p className="detail-body result-text">{project.result}</p>
             </section>
 
             <section className="detail-section project-preview">
