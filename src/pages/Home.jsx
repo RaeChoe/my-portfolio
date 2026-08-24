@@ -188,31 +188,94 @@ function Home() {
       {/* ABOUT */}
 
       <section className="about container" id="about">
-        <p className="eyebrow">ABOUT</p>
+        <div className="section-heading about-heading">
+          <p>
+            <span className="purple-dot" />
+            ABOUT
+          </p>
+
+          <span>FRONTEND DEVELOPER</span>
+        </div>
 
         <div className="about-grid">
-          <h2>
-            사용자에게 필요한 경험을
-            <br />
-            화면으로 구현합니다<span>.</span>
-          </h2>
+          <div className="about-title">
+            <h2>
+              사용자에게 필요한 경험을
+              <br />
+              화면으로 구현합니다<span>.</span>
+            </h2>
+
+            <p className="about-intro">
+              마크업과 반응형 웹 구현에서 시작해, JavaScript 기반 인터랙션과 React 기반 서비스
+              개발까지 경험해왔습니다.
+            </p>
+          </div>
 
           <div className="about-copy">
             <p>
-              React를 중심으로 프론트엔드 개발을 진행하며 UI 구현뿐만 아니라 인증, 데이터 연동,
-              접근성, 성능까지 함께 고민합니다.
+              단순히 화면을 만드는 것에 그치지 않고, 사용자가 자연스럽게 서비스를 이용할 수 있도록
+              UI의 흐름과 데이터 상태를 함께 고민합니다.
             </p>
 
-            <div className="about-tech">
-              <span>React</span>
-              <span>JavaScript</span>
-              <span>TypeScript</span>
-              <span>Vite</span>
-              <span>Supabase</span>
-              <span>Git</span>
-              <span>GitHub</span>
-              <span>Figma</span>
-            </div>
+            <p>
+              React를 중심으로 인증, 데이터베이스, 사용자 상호작용 기능을 구현하고 있으며, 웹
+              접근성·성능·SEO와 같은 서비스 품질도 함께 고려하는 개발을 지향합니다.
+            </p>
+          </div>
+        </div>
+
+        <div className="about-strengths">
+          <article className="about-strength">
+            <span>01</span>
+
+            <h3>UI & Responsive</h3>
+
+            <p>
+              디자인을 실제 화면으로 구현하고, 다양한 디바이스에서도 자연스럽게 사용할 수 있는
+              반응형 UI를 구성합니다.
+            </p>
+          </article>
+
+          <article className="about-strength">
+            <span>02</span>
+
+            <h3>Interaction & Data</h3>
+
+            <p>
+              사용자 입력과 데이터의 흐름을 고려해 상태가 자연스럽게 연결되는 인터랙션을 구현합니다.
+            </p>
+          </article>
+
+          <article className="about-strength">
+            <span>03</span>
+
+            <h3>Service Quality</h3>
+
+            <p>
+              기능 구현 이후에도 접근성, 성능, 웹 표준과 SEO를 점검하며 서비스 완성도를 높입니다.
+            </p>
+          </article>
+        </div>
+
+        <div className="about-stack">
+          <div className="about-stack-heading">
+            <span>TECH STACK</span>
+
+            <p>프로젝트에서 직접 사용한 기술을 중심으로 정리했습니다.</p>
+          </div>
+
+          <div className="about-tech">
+            <span>HTML5</span>
+            <span>CSS3</span>
+            <span>JavaScript</span>
+            <span>TypeScript</span>
+            <span>React</span>
+            <span>Vite</span>
+            <span>Supabase</span>
+            <span>Git</span>
+            <span>GitHub</span>
+            <span>Figma</span>
+            <span>Vercel</span>
           </div>
         </div>
       </section>
