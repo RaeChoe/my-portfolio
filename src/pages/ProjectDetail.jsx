@@ -17,6 +17,10 @@ function ProjectDetail() {
     );
   }
 
+  const currentIndex = projects.findIndex(item => item.id === project.id);
+
+  const nextProject = projects[(currentIndex + 1) % projects.length];
+
   return (
     <main className="detail-page">
       {/* DESKTOP SIDEBAR */}
@@ -106,12 +110,14 @@ function ProjectDetail() {
 
         <div className="detail-layout">
           <div className="detail-content">
+            {/* OVERVIEW */}
             <section className="detail-section">
               <p className="detail-label">OVERVIEW</p>
 
               <p className="detail-body">{project.overview}</p>
             </section>
 
+            {/* MY ROLE */}
             <section className="detail-section">
               <p className="detail-label">MY ROLE</p>
 
@@ -126,6 +132,7 @@ function ProjectDetail() {
               </div>
             </section>
 
+            {/* KEY FEATURES */}
             <section className="detail-section">
               <p className="detail-label">KEY FEATURES</p>
 
@@ -142,6 +149,7 @@ function ProjectDetail() {
               </div>
             </section>
 
+            {/* TROUBLE SHOOTING */}
             <section className="detail-section">
               <p className="detail-label">TROUBLE SHOOTING</p>
 
@@ -170,6 +178,7 @@ function ProjectDetail() {
               </div>
             </section>
 
+            {/* WHAT I LEARNED */}
             <section className="detail-section">
               <p className="detail-label">WHAT I LEARNED</p>
 
@@ -180,12 +189,14 @@ function ProjectDetail() {
               </ul>
             </section>
 
+            {/* RESULT */}
             <section className="detail-section">
               <p className="detail-label">RESULT</p>
 
               <p className="detail-body result-text">{project.result}</p>
             </section>
 
+            {/* PROJECT SCREENS */}
             <section className="detail-section project-screens">
               <p className="detail-label">
                 {project.screens?.length > 0 ? "PROJECT SCREENS" : "PROJECT SCREEN"}
@@ -221,6 +232,7 @@ function ProjectDetail() {
             </section>
           </div>
 
+          {/* PROJECT INFO */}
           <aside className="detail-info">
             <div>
               <p>TECH STACK</p>
@@ -255,6 +267,25 @@ function ProjectDetail() {
             </div>
           </aside>
         </div>
+
+        {/* NEXT PROJECT */}
+        <section className="next-project">
+          <p className="next-project-label">NEXT PROJECT</p>
+
+          <Link className="next-project-link" to={`/projects/${nextProject.id}`}>
+            <div className="next-project-info">
+              <span className="next-project-number">{nextProject.number}</span>
+
+              <div>
+                <h2>{nextProject.title}</h2>
+
+                <p>{nextProject.type}</p>
+              </div>
+            </div>
+
+            <span className="next-project-arrow">→</span>
+          </Link>
+        </section>
       </section>
     </main>
   );

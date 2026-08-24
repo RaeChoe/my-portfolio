@@ -1595,6 +1595,115 @@ img {
 }
 
 /* =========================
+   NEXT PROJECT
+========================= */
+
+.next-project {
+  margin-top: 90px;
+  padding-top: 30px;
+
+  border-top: 1px solid var(--border);
+}
+
+.next-project-label {
+  margin: 0 0 30px;
+
+  color: var(--purple);
+
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.next-project-link {
+  padding: 10px 0 36px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 40px;
+}
+
+.next-project-info {
+  min-width: 0;
+
+  display: flex;
+  align-items: flex-start;
+
+  gap: 28px;
+}
+
+.next-project-number {
+  padding-top: 9px;
+
+  flex-shrink: 0;
+
+  color: var(--purple);
+
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.next-project-info h2 {
+  margin: 0;
+
+  font-size: clamp(28px, 3vw, 44px);
+
+  line-height: 1.15;
+
+  letter-spacing: -0.05em;
+
+  word-break: keep-all;
+
+  transition: color 0.25s ease;
+}
+
+.next-project-info p {
+  margin: 10px 0 0;
+
+  color: var(--text-soft);
+
+  font-size: 12px;
+}
+
+.next-project-arrow {
+  width: 54px;
+  height: 54px;
+
+  flex-shrink: 0;
+
+  display: grid;
+  place-items: center;
+
+  border: 1px solid var(--border);
+  border-radius: 50%;
+
+  color: var(--text);
+
+  font-size: 22px;
+
+  transition:
+    color 0.25s ease,
+    background-color 0.25s ease,
+    border-color 0.25s ease,
+    transform 0.25s ease;
+}
+
+.next-project-link:hover .next-project-info h2 {
+  color: var(--purple);
+}
+
+.next-project-link:hover .next-project-arrow {
+  color: #ffffff;
+
+  border-color: var(--purple);
+
+  background: var(--purple);
+
+  transform: translateX(5px);
+}
+
+/* =========================
    NOT FOUND
 ========================= */
 
@@ -2020,6 +2129,37 @@ img {
   .screen-item > p {
     font-size: 12px;
   }
+
+  .next-project {
+    margin-top: 64px;
+  }
+
+  .next-project-link {
+    gap: 20px;
+  }
+
+  .next-project-info {
+    gap: 16px;
+  }
+
+  .next-project-number {
+    padding-top: 5px;
+  }
+
+  .next-project-info h2 {
+    font-size: 28px;
+  }
+
+  .next-project-info p {
+    font-size: 11px;
+  }
+
+  .next-project-arrow {
+    width: 44px;
+    height: 44px;
+
+    font-size: 18px;
+  }
 }
 
 /* =========================
@@ -2099,5 +2239,30 @@ img {
 
   .detail-mobile-back {
     font-size: 10px;
+  }
+
+  .next-project {
+    margin-top: 52px;
+  }
+
+  .next-project-label {
+    margin-bottom: 20px;
+  }
+
+  .next-project-info {
+    gap: 12px;
+  }
+
+  .next-project-info h2 {
+    font-size: 24px;
+  }
+
+  .next-project-info p {
+    margin-top: 7px;
+  }
+
+  .next-project-arrow {
+    width: 40px;
+    height: 40px;
   }
 }
