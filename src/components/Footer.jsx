@@ -1,6 +1,19 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
 
 function Footer() {
+  const [copied, setCopied] = useState(false);
+
+  const handleCopyEmail = async () => {
+    await navigator.clipboard.writeText("picasomati@gmail.com");
+
+    setCopied(true);
+
+    setTimeout(() => {
+      setCopied(false);
+    }, 1500);
+  };
+
   return (
     <footer id="contact" className="footer">
       <div className="container footer-inner">
@@ -21,15 +34,19 @@ function Footer() {
         </div>
 
         <div className="footer-contact">
-          <a href="mailto:picasomati@gmail.com" className="footer-contact-link">
+          <button
+            type="button"
+            className="footer-contact-link footer-email-button"
+            onClick={handleCopyEmail}
+          >
             <div>
               <span>EMAIL</span>
 
-              <strong>picasomati@gmail.com</strong>
+              <strong>{copied ? "Copied!" : "picasomati@gmail.com"}</strong>
             </div>
 
-            <span className="footer-arrow">↗</span>
-          </a>
+            <span className="footer-arrow">{copied ? "✓" : "⧉"}</span>
+          </button>
 
           <a
             href="https://github.com/RaeChoe"
