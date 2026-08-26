@@ -47,15 +47,15 @@ function Footer() {
           </a>
 
           <a
-            href="#resume"
-            className="footer-contact-link footer-contact-link-disabled"
-            onClick={event => event.preventDefault()}
-            aria-label="이력서 준비 중"
+            href="https://drive.google.com/file/d/1TPlxvFCtEqFIH7PVjqXffj_CmD4F7T_r/view?usp=sharing"
+            target="_blank"
+            rel="noreferrer"
+            className="footer-contact-link"
           >
             <div>
               <span>RESUME</span>
 
-              <strong>Coming Soon</strong>
+              <strong>saramin resume</strong>
             </div>
 
             <span className="footer-arrow">↗</span>
