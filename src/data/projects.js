@@ -1,5 +1,137 @@
 const projects = [
   {
+    id: "astrolog",
+    number: "04",
+    title: "AstroLog",
+    shortTitle: "AstroLog",
+    type: "Astronomy Observation Service",
+    description:
+      "현재 위치와 기상·천문 데이터를 결합해 오늘 밤 관측할 천체를 추천하고, 실제 관측 기록과 천체 도감을 연결한 개인 천문 관측 서비스입니다.",
+    overview:
+      "AstroLog는 천체 정보를 보는 데서 끝나지 않고 '오늘의 밤하늘 → 천체 탐색 → 관측 → 기록 → 도감 완성'으로 이어지는 흐름을 구현한 개인 프로젝트입니다. 브라우저 위치 정보와 기상청 단기예보, Astronomy Engine과 SunCalc의 천문 계산을 결합해 관측 환경과 추천 시간대를 제공하고, Supabase를 활용해 인증·관측 기록·관심 천체·Private Storage 기반 이미지를 관리했습니다.",
+    role: "Frontend Developer",
+    year: "2026",
+    period: "2026.08.28 - 2026.09.01",
+    teamSize: "1명",
+    image: "/images/project-4.png",
+
+    featured: true,
+
+    tech: ["Next.js", "React", "JavaScript", "Supabase", "Astronomy Engine", "SunCalc", "Vercel"],
+    tools: ["Figma", "Git", "GitHub", "ChatGPT"],
+
+    work: [
+      "서비스 기획 및 UI 구현",
+      "현재 위치 기반 관측 환경 계산",
+      "기상청 단기예보 API 연동",
+      "Astronomy Engine / SunCalc 기반 천문 계산",
+      "Tonight's Highlights 추천 로직 구현",
+      "Supabase Auth / Database / Storage / RLS 구성",
+      "관측 기록 CRUD 및 Private Storage 이미지 처리",
+      "천체 도감 / 개인 관측소 대시보드 구현",
+      "Google OAuth 및 Vercel 배포",
+      "SEO / Open Graph / sitemap / robots 설정",
+    ],
+
+    features: [
+      {
+        title: "오늘의 밤하늘",
+        text: "현재 위치와 기상 데이터를 바탕으로 기온, 습도, 달 위상, 일몰·월출, 관측 적합도와 추천 관측 시간대를 제공합니다.",
+      },
+      {
+        title: "Tonight's Highlights",
+        text: "천체 고도와 밝기뿐 아니라 시간대별 구름량, 강수확률, 습도, 풍속, 달 조명률과 달과의 각거리까지 반영해 추천 천체와 시간대를 계산합니다.",
+      },
+      {
+        title: "Observation & Collection",
+        text: "실제 관측 기록과 사진을 저장하고, 기록된 천체를 기준으로 별도의 수집 테이블 없이 개인 천체 도감 진행률을 자동 계산합니다.",
+      },
+      {
+        title: "My Observatory",
+        text: "총 관측 횟수, 관측 천체 수, 누적 시간, 평균 만족도, 월별 기록, 최근 관측과 관심 천체를 한 화면에서 확인할 수 있습니다.",
+      },
+    ],
+
+    troubleshooting: [
+      {
+        title: "Server Component와 브라우저 위치 정보 연결",
+        problem:
+          "Next.js Server Component에서는 navigator.geolocation을 사용할 수 없어 사용자의 현재 위치를 서버 기반 천문·기상 계산에 바로 활용할 수 없었습니다.",
+        solution:
+          "Client Component인 LocationInitializer에서 위치 권한을 요청하고 위도·경도를 Cookie에 저장한 뒤 router.refresh()를 실행했습니다. 서버에서는 Cookie를 읽어 현재 위치 기준 데이터를 계산하고, 위치 조회 실패 시 서울 좌표를 fallback으로 사용하도록 구성했습니다.",
+      },
+      {
+        title: "실제 관측 환경을 반영한 추천 로직 개선",
+        problem:
+          "초기 추천은 천체 고도와 밝기 중심이라 구름이 많거나 달빛이 강한 상황에서도 높은 추천 결과가 나올 수 있었습니다.",
+        solution:
+          "시간대별 구름량, 강수확률, 강수 여부, 습도, 풍속, 달 조명률과 대상 천체-달 각거리를 추가했습니다. 별점은 천체 자체의 관측 가치로 유지하고 실제 날씨는 추천 순서와 관측 시간 선정에 반영해 역할을 분리했습니다.",
+      },
+      {
+        title: "Supabase Private Storage 이미지 접근",
+        problem:
+          "개인 관측 사진을 Private Bucket에 저장하면 일반 public URL로는 브라우저에서 이미지를 표시할 수 없었습니다.",
+        solution:
+          "DB에는 Storage 내부 경로만 저장하고 화면 출력 시 createSignedUrl()로 임시 접근 URL을 생성했습니다. URL 생성이나 이미지 로드가 실패할 경우 SafeImage를 통해 fallback 이미지를 표시하도록 예외 처리했습니다.",
+      },
+      {
+        title: "RLS Policy와 Table Grant 권한 문제",
+        problem:
+          "RLS Policy를 설정한 뒤에도 일부 Supabase 테이블 요청이 권한 문제로 실패했습니다.",
+        solution:
+          "RLS Policy와 PostgreSQL Table Grant가 별개의 권한 체계임을 확인하고 필요한 GRANT 권한과 사용자별 RLS 정책을 함께 설정해 데이터 접근을 정상화했습니다.",
+      },
+    ],
+
+    learned: [
+      "Next.js의 Server / Client Component 경계를 고려해 브라우저 전용 정보와 서버 계산을 연결하는 방법을 경험했습니다.",
+      "외부 기상 데이터와 천문 계산 결과를 결합하면서 단순 API 출력이 아닌 서비스 목적에 맞는 추천 로직을 설계했습니다.",
+      "Supabase Auth, Database, RLS, Private Storage를 연결하며 사용자별 데이터를 안전하게 다루는 흐름을 구현했습니다.",
+      "ChatGPT를 기획 보조, 로직 검토, 코드 개선과 디버깅에 활용하되 실제 동작과 데이터 흐름을 직접 검증하며 개발했습니다.",
+      "배포 이후 OAuth Redirect, 환경변수, SEO와 오류 fallback까지 점검하면서 로컬 구현 이후의 운영 환경을 경험했습니다.",
+    ],
+
+    result:
+      "Next.js 기반 개인 프로젝트로 기획부터 UI, 외부 API, 천문 계산, 인증, 데이터베이스, Storage, SEO, 배포까지 하나의 서비스 흐름으로 완성했습니다. 특히 위치·기상·천문 데이터를 실제 사용자 관측 경험과 연결하면서 데이터 기반 기능을 서비스 UX로 구성하는 경험을 얻었습니다.",
+
+    github: "https://github.com/RaeChoe/astrol-log",
+    live: "https://astrol-log-woad.vercel.app",
+
+    screens: [
+      {
+        title: "Today & Tonight's Highlights",
+        image: "/images/project4-today.png",
+        description:
+          "현재 위치의 관측 환경과 달 위상, 일몰·월출, 관측 적합도를 제공하고 실제 기상·천문 조건을 반영한 Tonight's Highlights와 주간 천문 이벤트를 보여줍니다.",
+      },
+      {
+        title: "Explore",
+        image: "/images/project4-explore.png",
+        description:
+          "40개의 천체를 검색·분류하고 관심 천체와 관측 완료 상태를 함께 확인할 수 있는 천체 탐색 화면입니다.",
+      },
+      {
+        title: "Object Detail",
+        image: "/images/project4-object-detail.png",
+        description:
+          "천체 기본 정보와 현재 고도·방위·관측 조건을 위치 기준으로 계산하고, 관심 등록과 관측 기록 흐름으로 연결합니다.",
+      },
+      {
+        title: "Collection",
+        image: "/images/project4-collection.png",
+        description:
+          "실제 관측 기록을 기준으로 태양계, Messier Objects, 별 컬렉션의 수집 진행률과 관측 여부를 자동으로 계산합니다.",
+      },
+      {
+        title: "My Observatory",
+        image: "/images/project4-observatory.png",
+        description:
+          "사용자의 관측 통계, 도감 진행률, 월별 관측 기록, 최근 관측과 관심 천체를 한 화면에 정리한 개인 대시보드입니다.",
+      },
+    ],
+  },
+
+  {
     id: "estsoft",
     number: "01",
     title: "ESTsoft 과정 소개 사이트 리뉴얼",
@@ -164,7 +296,7 @@ const projects = [
     teamSize: "4명",
     image: "/images/project-3.png",
 
-    featured: true,
+    featured: false,
 
     tech: ["React", "TypeScript", "Vite", "Supabase", "Vercel"],
 
@@ -259,4 +391,6 @@ const projects = [
   },
 ];
 
-export default projects;
+const projectsByLatest = [...projects].sort((a, b) => Number(b.number) - Number(a.number));
+
+export default projectsByLatest;

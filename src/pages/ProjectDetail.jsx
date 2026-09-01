@@ -269,9 +269,9 @@ function ProjectDetail() {
               <p>TOOLS</p>
 
               <div className="info-tags">
-                <span>Figma</span>
-                <span>Git</span>
-                <span>GitHub</span>
+                {(project.tools || ["Figma", "Git", "GitHub"]).map(tool => (
+                  <span key={tool}>{tool}</span>
+                ))}
               </div>
             </div>
           </aside>

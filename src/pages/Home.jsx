@@ -1,3 +1,4 @@
+import { useRef } from "react";
 import { Link } from "react-router-dom";
 
 import Header from "../components/Header";
@@ -7,6 +8,23 @@ import projects from "../data/projects";
 import SEO from "../components/SEO";
 
 function Home() {
+  const projectsTrackRef = useRef(null);
+  const latestProject = projects[0];
+
+  const scrollProjects = direction => {
+    const track = projectsTrackRef.current;
+    if (!track) return;
+
+    const card = track.querySelector(".project-card");
+    const gap = 18;
+    const distance = card ? card.getBoundingClientRect().width + gap : track.clientWidth * 0.8;
+
+    track.scrollBy({
+      left: direction * distance,
+      behavior: "smooth",
+    });
+  };
+
   const scrollToProjects = () => {
     document.getElementById("projects")?.scrollIntoView({
       behavior: "smooth",
@@ -71,31 +89,51 @@ function Home() {
           <div className="hero-visual">
             <div className="hero-glow" />
 
-            <div className="browser-mockup">
+            <Link
+              className="browser-mockup"
+              to={`/projects/${latestProject.id}`}
+              aria-label={`${latestProject.title} 프로젝트 상세 보기`}
+            >
               <div className="browser-bar">
                 <span />
                 <span />
                 <span />
               </div>
 
-              <img src="/images/hero-project.png" alt="깃깔나는 레시피 레시피 상세 페이지" />
-            </div>
+              <img src={latestProject.image} alt={`${latestProject.title} 프로젝트 화면`} />
+
+              <div className="hero-project-label">
+                <span>LATEST PROJECT</span>
+                <strong>{latestProject.title}</strong>
+              </div>
+            </Link>
           </div>
         </section>
 
         {/* PROJECTS */}
         <section className="projects-section" id="projects">
           <div className="container">
-            <div className="section-heading">
+            <div className="section-heading projects-heading">
               <p>
                 <span className="purple-dot" />
                 SELECTED PROJECTS
               </p>
 
-              <span>{String(projects.length).padStart(2, "0")} PROJECTS</span>
+              <div className="projects-heading-actions">
+                <span>{String(projects.length).padStart(2, "0")} PROJECTS</span>
+
+                <div className="project-slider-controls" aria-label="프로젝트 슬라이드 이동">
+                  <button type="button" onClick={() => scrollProjects(-1)} aria-label="이전 프로젝트">
+                    ←
+                  </button>
+                  <button type="button" onClick={() => scrollProjects(1)} aria-label="다음 프로젝트">
+                    →
+                  </button>
+                </div>
+              </div>
             </div>
 
-            <div className="projects-grid">
+            <div className="projects-grid" ref={projectsTrackRef}>
               {projects.map(project => (
                 <article
                   className={`project-card ${project.featured ? "featured" : ""}`}
