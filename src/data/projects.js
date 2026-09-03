@@ -76,8 +76,7 @@ const projects = [
       },
       {
         title: "RLS Policy와 Table Grant 권한 문제",
-        problem:
-          "RLS Policy를 설정한 뒤에도 일부 Supabase 테이블 요청이 권한 문제로 실패했습니다.",
+        problem: "RLS Policy를 설정한 뒤에도 일부 Supabase 테이블 요청이 권한 문제로 실패했습니다.",
         solution:
           "RLS Policy와 PostgreSQL Table Grant가 별개의 권한 체계임을 확인하고 필요한 GRANT 권한과 사용자별 RLS 정책을 함께 설정해 데이터 접근을 정상화했습니다.",
       },
@@ -138,65 +137,88 @@ const projects = [
     shortTitle: "ESTsoft Renewal",
     type: "Landing Page Renewal",
     description:
-      "정보 중심의 기존 사이트를 사용자 행동을 유도하는 반응형 랜딩 페이지로 리뉴얼했습니다.",
+      "HTML/CSS 기반 1차 팀 프로젝트를 완성한 뒤, 기존 구조를 유지하면서 UI와 인터랙션을 개인적으로 추가 리뉴얼했습니다.",
     overview:
-      "ESTsoft 교육 과정 소개 사이트를 팀 프로젝트로 리뉴얼했습니다. 콘텐츠 구조와 사용자 흐름을 정리하고, 반응형 환경에서도 자연스럽게 정보를 탐색할 수 있도록 화면을 구현했습니다.",
-    role: "Frontend Lead",
+      "ESTsoft 교육 과정 소개 사이트를 팀 프로젝트로 리뉴얼한 작업입니다. 당시에는 HTML과 CSS를 중심으로 콘텐츠 구조와 반응형 랜딩 페이지를 구현했고, 이후 다른 프로젝트를 진행하며 쌓은 경험을 바탕으로 기존 결과물을 다시 점검해 개인 리뉴얼을 진행했습니다. 기존 기획과 HTML/CSS 중심의 구조는 유지하면서 Header Navigation, Scroll Reveal, FAQ 인터랙션을 보완하고 커리큘럼 영역에는 Swiper.js를 적용해 사용성과 코드 구조를 개선했습니다.",
+    role: "Frontend Lead · Personal Renewal",
     year: "2026",
-    period: "2026",
+    period: "2026.04.30 - 05.12 / 2026.09 Renewal",
     teamSize: "5명",
     image: "/images/project-1.png",
 
-    tech: ["HTML", "CSS"],
+    tech: ["HTML", "CSS", "JavaScript", "Swiper.js"],
 
     work: [
-      "Benefits 영역 구현",
-      "Event 영역 구현",
-      "PR 콘텐츠 영역 구현",
-      "반응형 레이아웃 구현",
-      "웹 표준 및 접근성 고려",
+      "팀 프로젝트 Benefits 영역 구현",
+      "팀 프로젝트 Event 영역 구현",
+      "팀 프로젝트 PR 콘텐츠 영역 구현",
+      "반응형 레이아웃 및 웹 표준·접근성 고려",
+      "프로젝트 종료 후 전체 UI 개인 리뉴얼",
+      "Header Navigation 활성 상태 및 Scroll Reveal 개선",
+      "커리큘럼 Slider를 Swiper.js 기반으로 전환",
+      "FAQ 독립 열기 / 닫기 애니메이션 및 모션 접근성 보완",
     ],
 
     features: [
       {
         title: "Responsive Layout",
-        text: "다양한 화면 크기에 맞춰 콘텐츠 구조가 자연스럽게 변하도록 반응형 UI를 구현했습니다.",
+        text: "다양한 화면 크기에 맞춰 콘텐츠 구조가 자연스럽게 변하도록 반응형 UI를 구현하고, 개인 리뉴얼 과정에서 모바일 레이아웃과 간격을 다시 정리했습니다.",
       },
       {
-        title: "Content Structure",
-        text: "교육 과정의 핵심 정보가 빠르게 전달되도록 콘텐츠의 우선순위와 배치를 개선했습니다.",
+        title: "Personal Renewal",
+        text: "초기 팀 프로젝트의 기획과 HTML/CSS 구조를 유지하면서 Header, Hero, 후기, 강사진, FAQ 등 전체 UI를 다시 점검하고 개선했습니다.",
       },
       {
-        title: "Interactive UI",
-        text: "사용자가 콘텐츠를 탐색하기 쉽도록 버튼과 섹션에 인터랙션을 적용했습니다.",
+        title: "Curriculum Swiper",
+        text: "직접 transform 값을 계산하던 커리큘럼 슬라이더를 Swiper.js 12로 전환하고, 현재 슬라이드와 상단 Progress가 함께 변경되도록 연동했습니다.",
+      },
+      {
+        title: "Progressive Interaction",
+        text: "IntersectionObserver 기반 Scroll Reveal, 현재 섹션 Navigation 표시, FAQ 애니메이션 등 JavaScript를 사용자 경험을 보조하는 인터랙션 중심으로 적용했습니다.",
       },
     ],
 
     troubleshooting: [
       {
-        title: "반응형 레이아웃 구조 정리",
+        title: "기존 CSS와 리뉴얼 스타일 충돌 해결",
         problem:
-          "데스크톱 기준으로 구성된 콘텐츠를 작은 화면에서도 자연스럽게 보여주기 위해 섹션별 레이아웃 구조를 다시 정리해야 했습니다.",
+          "기존 팀 프로젝트 CSS 위에 리뉴얼 스타일을 추가하면서 커리큘럼 진행선과 구분선처럼 이전 스타일과 새 스타일이 동시에 적용되는 충돌이 발생했습니다.",
         solution:
-          "고정 크기와 불필요한 절대 위치 사용을 줄이고 Flex와 Grid를 중심으로 레이아웃을 구성했습니다. 주요 브레이크포인트에 따라 콘텐츠 배치와 간격을 조정해 화면 크기가 달라져도 정보 흐름이 유지되도록 개선했습니다.",
+          "기존 구조를 전부 다시 작성하지 않고 충돌 지점을 확인해 renewal.css에서 선택자 범위를 명확히 하고 필요한 속성을 재정의했습니다. 특히 커리큘럼 영역은 Swiper 구조에 맞게 스타일을 분리해 기존 코드와 리뉴얼 코드의 역할을 구분했습니다.",
       },
       {
-        title: "정보량이 많은 랜딩 페이지의 가독성 개선",
+        title: "커리큘럼 슬라이더 구조 개선",
         problem:
-          "교육 과정 소개 페이지 특성상 전달해야 할 정보가 많아 콘텐츠가 길고 복잡하게 느껴질 수 있었습니다.",
+          "기존 슬라이더는 JavaScript에서 직접 translate3d 값을 계산해 이동시키는 방식이라 슬라이드 이동과 상단 진행 상태를 함께 관리해야 했고 관련 코드가 복잡해졌습니다.",
         solution:
-          "섹션별 목적을 명확하게 나누고 제목, 설명, CTA의 시각적 우선순위를 조정했습니다. 사용자가 페이지를 순서대로 읽지 않아도 주요 정보를 빠르게 파악할 수 있도록 구성했습니다.",
+          "Swiper.js 12로 슬라이더를 전환하고 slideChange 이벤트를 이용해 현재 슬라이드와 Progress UI를 동기화했습니다. Navigation 버튼과 모바일 Swipe, Keyboard Navigation을 활용할 수 있도록 구성하면서 직접 관리해야 하는 슬라이더 로직을 줄였습니다.",
+      },
+      {
+        title: "FAQ 기본 구조를 유지한 애니메이션 개선",
+        problem:
+          "HTML details/summary를 사용하면 JavaScript 없이도 기본적인 FAQ 동작은 가능하지만, 닫힐 때 답변이 즉시 사라져 전환이 부자연스러웠습니다.",
+        solution:
+          "details/summary 구조는 유지하면서 Web Animations API로 질문과 답변의 실제 높이를 계산해 열림과 닫힘을 부드럽게 처리했습니다. 각 FAQ는 독립적으로 동작하도록 구성하고 prefers-reduced-motion 환경에서는 애니메이션 없이 즉시 전환되도록 처리했습니다.",
+      },
+      {
+        title: "현재 섹션을 반영하는 Navigation 구현",
+        problem:
+          "기존 Anchor Navigation은 원하는 섹션으로 이동할 수는 있었지만 사용자가 현재 어느 섹션을 보고 있는지 Header에서 확인하기 어려웠습니다.",
+        solution:
+          "스크롤 위치와 각 Section의 위치를 비교해 현재 영역에 대응하는 Navigation에 active Class와 aria-current 속성을 적용했습니다. 링크를 직접 클릭했을 때도 활성 상태가 즉시 반영되도록 동기화했습니다.",
       },
     ],
 
     learned: [
-      "단순히 시안을 동일하게 구현하는 것보다 콘텐츠의 우선순위와 사용자 흐름을 고려한 마크업이 중요하다는 점을 배웠습니다.",
-      "반응형 UI에서는 특정 해상도에 맞춘 보정보다 유연한 레이아웃 구조를 먼저 설계하는 것이 유지보수에 유리하다는 점을 경험했습니다.",
-      "팀 프로젝트에서 공통 UI와 작업 범위를 초기에 정리하는 것이 이후 작업 충돌을 줄이는 데 도움이 된다는 점을 배웠습니다.",
+      "첫 프로젝트를 다시 살펴보며 새로운 기술로 전부 다시 만드는 것보다 기존 코드의 문제를 읽고 필요한 부분을 개선하는 리팩토링 과정의 중요성을 경험했습니다.",
+      "HTML과 CSS만으로 가능한 부분은 기본 기능을 우선 활용하고, JavaScript는 Navigation 동기화나 애니메이션처럼 사용자 경험을 보조하는 역할에 제한했습니다.",
+      "직접 구현한 Slider와 라이브러리 방식을 비교하면서 복잡한 이동 기능은 Swiper.js에 맡기고 프로젝트에 필요한 Progress 상태 연동만 직접 구현하는 방식이 유지보수에 유리하다는 점을 배웠습니다.",
+      "IntersectionObserver와 requestAnimationFrame을 활용하며 스크롤 기반 인터랙션을 무조건 이벤트마다 처리하기보다 필요한 시점에 효율적으로 갱신하는 방식을 경험했습니다.",
+      "팀 프로젝트 당시의 결과물과 이후 개인 리뉴얼을 비교하면서 반응형 구조, 접근성, CSS 설계와 인터랙션 구현에서의 성장을 확인할 수 있었습니다.",
     ],
 
     result:
-      "첫 팀 프로젝트를 통해 HTML, CSS 기반의 반응형 웹사이트 구현 과정을 경험하고, 이후 프로젝트에서 재사용할 수 있는 레이아웃 설계와 협업 방식의 기본을 익혔습니다.",
+      "첫 팀 프로젝트 결과물을 그대로 보관하는 대신 이후 프로젝트에서 학습한 내용을 다시 적용해 개인 리뉴얼까지 진행했습니다. 기존 HTML/CSS 중심의 구조와 팀 프로젝트의 기획 의도는 유지하면서 UI, 반응형, 접근성, Navigation, FAQ와 커리큘럼 인터랙션을 개선해 초기 결과물을 현재의 개발 기준으로 다시 다듬었습니다.",
 
     github: "https://github.com/RaeChoe/ESTFE13_1st_Project_personal",
 
