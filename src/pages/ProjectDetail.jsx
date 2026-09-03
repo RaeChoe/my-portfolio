@@ -21,7 +21,9 @@ function ProjectDetail() {
 
   const currentIndex = projects.findIndex(item => item.id === project.id);
 
-  const nextProject = projects[(currentIndex + 1) % projects.length];
+  // projects가 최신순으로 정렬되어 있으므로
+  // 현재 프로젝트 다음 인덱스는 시간상 이전 프로젝트
+  const previousProject = projects[(currentIndex + 1) % projects.length];
 
   return (
     <main className="detail-page">
@@ -277,22 +279,22 @@ function ProjectDetail() {
           </aside>
         </div>
 
-        {/* NEXT PROJECT */}
+        {/* PREVIOUS PROJECT */}
         <section className="next-project">
-          <p className="next-project-label">NEXT PROJECT</p>
+          <p className="next-project-label">PREVIOUS PROJECT</p>
 
-          <Link className="next-project-link" to={`/projects/${nextProject.id}`}>
+          <Link className="next-project-link" to={`/projects/${previousProject.id}`}>
+            <span className="next-project-arrow">←</span>
+
             <div className="next-project-info">
-              <span className="next-project-number">{nextProject.number}</span>
+              <span className="next-project-number">{previousProject.number}</span>
 
               <div>
-                <h2>{nextProject.title}</h2>
+                <h2>{previousProject.title}</h2>
 
-                <p>{nextProject.type}</p>
+                <p>{previousProject.type}</p>
               </div>
             </div>
-
-            <span className="next-project-arrow">→</span>
           </Link>
         </section>
       </section>
