@@ -207,6 +207,64 @@ function ProjectDetail() {
               <p className="detail-body result-text">{project.result}</p>
             </section>
 
+            {/* BEFORE / AFTER RENEWAL */}
+            {project.beforeScreens?.length > 0 && (
+              <section className="detail-section renewal-comparison">
+                <p className="detail-label">BEFORE / AFTER RENEWAL</p>
+
+                {project.renewalComparison && (
+                  <div className="renewal-intro">
+                    <h2>{project.renewalComparison.title}</h2>
+                    <p>{project.renewalComparison.description}</p>
+                  </div>
+                )}
+
+                <div className="renewal-list">
+                  {project.beforeScreens.map((before, index) => {
+                    const after = project.screens?.find(screen => screen.title === before.title);
+
+                    return (
+                      <article className="renewal-item" key={before.title}>
+                        <div className="renewal-heading">
+                          <span>{String(index + 1).padStart(2, "0")}</span>
+
+                          <h3>{before.title}</h3>
+                        </div>
+
+                        <div className="renewal-grid">
+                          <div className="renewal-screen">
+                            <p className="renewal-screen-label">BEFORE</p>
+
+                            <div className="screen-image">
+                              <img
+                                src={before.image}
+                                alt={`${project.title} ${before.title} 리뉴얼 전`}
+                              />
+                            </div>
+                          </div>
+
+                          {after && (
+                            <div className="renewal-screen">
+                              <p className="renewal-screen-label">AFTER</p>
+
+                              <div className="screen-image">
+                                <img
+                                  src={after.image}
+                                  alt={`${project.title} ${after.title} 리뉴얼 후`}
+                                />
+                              </div>
+                            </div>
+                          )}
+                        </div>
+
+                        <p className="renewal-description">{before.description}</p>
+                      </article>
+                    );
+                  })}
+                </div>
+              </section>
+            )}
+
             {/* PROJECT SCREENS */}
             <section className="detail-section project-screens">
               <p className="detail-label">

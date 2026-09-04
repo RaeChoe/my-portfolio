@@ -142,7 +142,7 @@ const projects = [
       "ESTsoft 교육 과정 소개 사이트를 팀 프로젝트로 리뉴얼한 작업입니다. 당시에는 HTML과 CSS를 중심으로 콘텐츠 구조와 반응형 랜딩 페이지를 구현했고, 이후 다른 프로젝트를 진행하며 쌓은 경험을 바탕으로 기존 결과물을 다시 점검해 개인 리뉴얼을 진행했습니다. 기존 기획과 HTML/CSS 중심의 구조는 유지하면서 Header Navigation, Scroll Reveal, FAQ 인터랙션을 보완하고 커리큘럼 영역에는 Swiper.js를 적용해 사용성과 코드 구조를 개선했습니다.",
     role: "Frontend Lead · Personal Renewal",
     year: "2026",
-    period: "2026.04.30 - 05.12 / 2026.09 Renewal",
+    period: "2026.04.30 - 05.12 / 2026.09.02 Renewal",
     teamSize: "5명",
     image: "/images/project-1.png",
 
@@ -228,78 +228,163 @@ const projects = [
   {
     id: "rounz",
     number: "02",
-    title: "ROUNZ 쇼핑몰 구현",
+    title: "ROUNZ 쇼핑몰 리뉴얼",
     shortTitle: "ROUNZ",
-    type: "E-Commerce Website",
+    type: "E-Commerce Website Renewal",
     description:
-      "쇼핑몰 상품 탐색부터 상세 정보 확인까지 JavaScript 기반의 인터랙티브 UI를 구현했습니다.",
-    overview:
-      "패션 브랜드 ROUNZ의 쇼핑몰 UI를 참고하여 JavaScript 기반으로 구현한 팀 프로젝트입니다. 상품 목록과 상세 정보, 옵션 선택 등 실제 쇼핑몰에서 사용되는 인터랙션 구현에 집중했습니다.",
-    role: "Frontend Developer",
-    year: "2026",
-    period: "2026",
-    teamSize: "5명",
-    image: "/images/project-2.png",
+      "기존 Vanilla JavaScript 팀 프로젝트를 기반으로 전체 UI/UX와 스타일 구조, 반응형·접근성을 개인적으로 리뉴얼한 아이웨어 쇼핑몰 프로젝트입니다.",
 
-    tech: ["JavaScript", "Vite", "HTML", "CSS"],
+    overview:
+      "이스트캠프 2차 팀 프로젝트로 제작한 ROUNZ 쇼핑몰을 개인 포트폴리오용으로 전면 리뉴얼한 프로젝트입니다. 팀 프로젝트 당시에는 상품 상세 페이지를 담당했으며, 프로젝트 종료 후 기존 Vanilla JavaScript와 JSON 기반 데이터 구조는 유지하면서 Header / Footer, 메인, 상품 목록, 상품 상세, 장바구니, 로그인 / 회원가입까지 전체 화면을 다시 설계했습니다. 기존 Custom CSS 중심 구조를 Tailwind CSS v4 기반으로 정리하고, 반응형 레이아웃과 키보드 접근성, 모바일 메뉴 인터랙션, 코드 구조까지 함께 개선했습니다.",
+
+    role: "Frontend Developer · Personal Renewal",
+    year: "2026",
+    period: "2026.05.29 - 06.18 / 2026.09.03 Renewal",
+    teamSize: "5명",
+    image: "/images/project2-main.png",
+
+    tech: ["JavaScript", "Tailwind CSS", "Vite", "Swiper.js", "HTML", "JSON"],
+
+    tools: ["Git", "GitHub", "Biome", "Vercel", "ChatGPT"],
 
     work: [
-      "상품 상세 페이지 담당",
-      "상품 데이터 렌더링",
-      "옵션 선택 UI 구현",
-      "수량 및 가격 계산",
-      "장바구니 관련 인터랙션",
-      "반응형 UI 구현",
+      "팀 프로젝트 상품 상세 페이지 담당",
+      "프로젝트 종료 후 전체 UI/UX 개인 리뉴얼",
+      "공통 Header / Footer 재설계",
+      "메인 페이지 Editorial 스타일 리뉴얼",
+      "상품 목록 검색 / 필터 / 정렬 UI 개선",
+      "상품 상세 구매 영역 및 Tab 구조 개선",
+      "LocalStorage 기반 장바구니 UX 리뉴얼",
+      "로그인 / 회원가입 공통 Auth UI 개선",
+      "Tailwind CSS v4 기반 스타일 구조 전환",
+      "Legacy CSS 및 불필요 코드 정리",
+      "반응형 / 키보드 접근성 / 빌드 최종 점검",
     ],
 
     features: [
       {
-        title: "상품 상세 페이지",
-        text: "상품 이미지와 가격, 옵션, 제품 정보를 사용자가 한눈에 확인할 수 있도록 구현했습니다.",
+        title: "Full UI Renewal",
+        text: "팀 프로젝트의 기존 기능과 데이터 구조는 유지하면서 Header / Footer부터 메인, 상품 목록, 상세, 장바구니, 인증 화면까지 전체 UI를 하나의 디자인 시스템으로 다시 구성했습니다.",
       },
       {
-        title: "옵션 / 수량 / 가격",
-        text: "사용자의 옵션과 수량 선택에 따라 가격과 선택 상태가 실시간으로 반영되도록 구현했습니다.",
+        title: "Product Discovery",
+        text: "56개의 JSON 상품 데이터를 기반으로 카테고리, 브랜드, 컬러, 가격 필터와 검색, 정렬, NEW·BEST·SALE 배지를 제공하도록 상품 탐색 경험을 개선했습니다.",
       },
       {
-        title: "장바구니",
-        text: "선택한 상품 정보와 옵션을 기준으로 장바구니 관련 인터랙션을 구현했습니다.",
+        title: "Shopping Experience",
+        text: "상품 상세에서 수량과 장바구니 추가, 상세정보·후기·문의·구매정보 Tab을 제공하고 장바구니에서는 전체 선택, 선택 삭제, 수량 변경, 주문 금액 계산과 추천 상품을 연결했습니다.",
       },
       {
-        title: "반응형 UI",
-        text: "데스크톱과 모바일 환경에 맞게 UI와 콘텐츠 배치를 조정했습니다.",
+        title: "Responsive & Accessible UI",
+        text: "모바일 Drawer Menu, Collection Accordion, Skip Link, aria 속성, ESC 닫기, Focus 복원, inert 처리를 적용해 다양한 화면과 키보드 환경에서 사용할 수 있도록 개선했습니다.",
       },
     ],
 
     troubleshooting: [
       {
-        title: "옵션과 수량에 따른 상품 상태 동기화",
+        title: "기존 CSS와 Tailwind CSS 전환 과정의 충돌",
         problem:
-          "상품 상세 페이지에서 옵션과 수량이 변경될 때 화면에 표시되는 정보와 사용자가 선택한 상태가 서로 어긋날 수 있었습니다.",
+          "초기 팀 프로젝트는 reset, variables, utilities, modules 등 여러 Custom CSS 파일에 의존하고 있어 Tailwind CSS를 바로 적용하면 기존 Reset과 Preflight가 충돌하며 레이아웃이 깨지는 문제가 있었습니다.",
         solution:
-          "선택된 옵션과 수량을 하나의 상태 흐름으로 관리하고, 사용자 입력이 변경될 때 관련 UI와 가격 정보가 함께 갱신되도록 로직을 정리했습니다.",
+          "리뉴얼 초기에는 Tailwind Preflight를 제외하고 기존 CSS와 병행한 뒤, 페이지별 리뉴얼이 끝난 후 사용하지 않는 Legacy CSS를 단계적으로 제거했습니다. 최종적으로 Tailwind Preflight와 공통 Theme 중심 구조로 전환하고 필요한 상태 스타일만 페이지 CSS에 남겼습니다.",
       },
       {
-        title: "데이터 기반 상품 상세 UI 구성",
+        title: "공통 Header의 데스크톱 / 모바일 인터랙션 통합",
         problem:
-          "상품마다 이름, 가격, 이미지, 옵션 등 데이터가 달라 하드코딩 방식으로는 확장성과 유지보수가 떨어지는 문제가 있었습니다.",
+          "데스크톱 Collection Dropdown과 모바일 Drawer / Accordion이 서로 다른 방식으로 동작하면서 메뉴 상태, 키보드 Focus, 배경 스크롤을 각각 관리해야 했습니다.",
         solution:
-          "상품 데이터를 기준으로 상세 정보를 동적으로 렌더링하도록 구조를 변경했습니다. 반복되는 UI는 동일한 데이터 구조를 활용하도록 정리해 상품이 변경되어도 동일한 화면 구조를 사용할 수 있도록 했습니다.",
+          "aria-expanded와 aria-hidden을 상태와 함께 갱신하고 ESC 닫기, 외부 클릭, Focus 복원 로직을 추가했습니다. 모바일 메뉴가 열릴 때는 main과 footer에 inert를 적용하고 body scroll을 잠가 배경 콘텐츠와의 상호작용을 제한했습니다.",
+      },
+      {
+        title: "장바구니 상태와 주문 요약 동기화",
+        problem:
+          "상품 수량, 개별 선택, 전체 선택, 삭제가 동시에 변경될 수 있어 장바구니 목록과 선택 상품 수, 총 금액이 서로 어긋날 가능성이 있었습니다.",
+        solution:
+          "LocalStorage의 장바구니 데이터를 기준으로 상태를 다시 렌더링하고 선택된 상품만 계산하도록 흐름을 정리했습니다. 수량 변경과 삭제 이후에도 Header 장바구니 Count와 주문 요약이 함께 갱신되도록 공통 로직을 연결했습니다.",
+      },
+      {
+        title: "기존 프로젝트 코드 정리와 기능 유지",
+        problem:
+          "리뉴얼 이후에도 사용하지 않는 CSS 파일과 JavaScript 함수, 중복 스타일이 남아 있어 실제로 필요한 코드와 Legacy 코드의 구분이 어려웠습니다.",
+        solution:
+          "HTML과 JavaScript의 실제 Class 사용처와 동적 생성 Class를 확인한 뒤 사용하지 않는 reset, variables, utilities, Header / Footer CSS와 중복 Auth CSS를 제거했습니다. Biome check와 Vite build를 통해 정리 이후에도 기능과 빌드가 유지되는지 검증했습니다.",
       },
     ],
 
     learned: [
-      "JavaScript에서 DOM을 직접 조작하는 것보다 상태와 데이터 흐름을 먼저 정리하는 것이 복잡한 인터랙션 구현에 중요하다는 점을 배웠습니다.",
-      "사용자의 선택에 따라 여러 UI가 동시에 바뀌는 화면에서는 각각을 독립적으로 처리하기보다 하나의 상태를 기준으로 동기화하는 방식이 안정적이라는 점을 경험했습니다.",
-      "쇼핑몰 UI를 구현하면서 사용자가 상품 정보를 확인하고 구매 행동으로 이어지는 흐름을 고려하게 되었습니다.",
+      "기존 프로젝트를 처음부터 다시 만드는 것보다 현재 구조를 분석하고 기능을 유지하면서 필요한 부분만 단계적으로 교체하는 리팩토링 과정을 경험했습니다.",
+      "Tailwind CSS를 단순 Utility 작성 도구로 사용하는 것뿐 아니라 Theme, Preflight, 최소 Custom CSS를 조합해 기존 CSS 구조를 단순화하는 방법을 익혔습니다.",
+      "Dropdown, Drawer, Accordion처럼 시각적으로 단순해 보이는 UI도 키보드 Focus, aria 상태, 배경 스크롤과 같은 접근성 요소까지 함께 고려해야 한다는 점을 배웠습니다.",
+      "LocalStorage 기반 장바구니에서도 하나의 데이터 상태를 기준으로 목록, Header Count, 주문 요약을 함께 갱신해야 UI 상태를 안정적으로 유지할 수 있다는 점을 경험했습니다.",
+      "팀 프로젝트 당시 담당했던 상품 상세 페이지뿐 아니라 다른 팀원이 구현했던 화면까지 직접 리뉴얼하면서 전체 서비스의 UI 일관성과 코드 구조를 보는 관점을 넓힐 수 있었습니다.",
     ],
 
     result:
-      "정적인 페이지 구현에서 한 단계 더 나아가 JavaScript를 활용해 데이터와 사용자 입력에 따라 UI가 변화하는 인터랙티브 웹페이지를 구현했습니다.",
+      "팀 프로젝트 당시 구현했던 Vanilla JavaScript 기반 쇼핑몰을 단순 보관하지 않고, 이후 학습한 Tailwind CSS와 UI 설계, 접근성, 반응형, 코드 품질 관리 경험을 다시 적용해 전체 사이트를 개인적으로 리뉴얼했습니다. 기존 기능과 데이터 구조를 유지하면서 디자인 시스템과 인터랙션, 스타일 구조를 재정비해 초기 팀 프로젝트와 현재 개발 역량의 차이를 보여줄 수 있는 포트폴리오 프로젝트로 완성했습니다.",
 
     github: "https://github.com/RaeChoe/ESTFE13_2nd_Project_personal",
 
     live: "https://estfe132ndprojectpersonal.vercel.app/",
+
+    screens: [
+      {
+        title: "Main",
+        image: "/images/project2-main.png",
+        description:
+          "Warm Ivory와 Plum 컬러를 중심으로 전체 메인 페이지를 재설계하고, Swiper Hero와 Perspective, Category, Featured Products, Editorial, Review, Guide 영역을 하나의 Editorial 스타일로 통일했습니다.",
+      },
+      {
+        title: "Product List",
+        image: "/images/project2-product-list.png",
+        description:
+          "56개의 JSON 상품 데이터를 기반으로 검색과 카테고리·브랜드·컬러·가격 필터를 제공하고, NEW·BEST·SALE 배지와 반응형 상품 Grid를 적용했습니다.",
+      },
+      {
+        title: "Product Detail",
+        image: "/images/project2-detail.png",
+        description:
+          "상품 이미지와 구매 정보를 중심으로 상세 화면을 재구성하고 수량 선택, 장바구니 추가, 상세정보·후기·문의·구매정보 Tab과 프리미엄 서비스 영역을 연결했습니다.",
+      },
+      {
+        title: "Shopping Bag",
+        image: "/images/project2-cart.png",
+        description:
+          "LocalStorage 기반 장바구니에 전체 선택, 선택 삭제, 수량 변경, 주문 금액 계산과 Sticky 주문 요약을 적용하고 현재 상품을 제외한 추천 상품 영역을 추가했습니다.",
+      },
+      {
+        title: "Login",
+        image: "/images/project2-auth.png",
+        description:
+          "로그인과 회원가입 화면을 공통 Auth UI로 재설계하고 입력값 검증과 비밀번호 표시 기능을 유지하면서 전체 디자인 시스템과 반응형 구조에 맞게 정리했습니다.",
+      },
+    ],
+
+    beforeScreens: [
+      {
+        title: "Main",
+        image: "/images/project2-before-main.png",
+        description:
+          "팀 프로젝트 당시 메인 화면입니다. 기본 슬라이더와 공통 헤더를 중심으로 구성되어 있었으며, 개인 리뉴얼에서는 전체 타이포그래피와 섹션 구조, 컬러 시스템을 다시 설계했습니다.",
+      },
+      {
+        title: "Product List",
+        image: "/images/project2-before-product-list.png",
+        description:
+          "기존 상품 목록은 기본 카드와 필터 중심의 구조였습니다. 리뉴얼에서는 정보 위계와 여백, 필터 구조, 상품 카드 스타일을 재정비해 탐색성을 높였습니다.",
+      },
+      {
+        title: "Shopping Bag",
+        image: "/images/project2-before-cart.png",
+        description:
+          "기존 장바구니는 카드형 상품 목록과 주문 요약으로 구성되어 있었습니다. 리뉴얼에서는 선택·수량·금액 흐름을 정리하고 전체 쇼핑몰 디자인 시스템과 일관되도록 재구성했습니다.",
+      },
+    ],
+
+    renewalComparison: {
+      title: "기존 팀 프로젝트를 개인적으로 다시 설계했습니다.",
+      description:
+        "기존 기능과 데이터 구조는 유지하면서 공통 UI, 레이아웃, 스타일 구조, 반응형과 접근성을 전면적으로 개선했습니다.",
+    },
   },
 
   {
